@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Random Student Picker</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+	<section class="wrapper">
+		<h1>Random Student Picker</h1>
+		<button id="add-student">Добавить студента</button>
+		<ul></ul>
+		<button id="pick-student">Выбрать студента</button>
+	</section>
+
+	<!-- МОДАЛЬНОЕ ОКНО -->
+
+	<section id="student-modal" class="modal">
+		<section class="modal-content">
+			<section class="modal-header">
+				<h2>Modal title</h2>
+				<span class="close">&times;</span>
+			</section>
+			<section id="success-message" class="success" style="display: none;"></section>
+			<section class="modal-body">
+				<label for="student-name">Имя студента</label>
+				<input type="text" id="student-name" name="student-name">
+			</section>
+			<section class="modal-footer">
+				<button id="cancel">Отмена</button>
+				<button id="add">Добавить</button>
+			</section>
+		</section>
+	</section>
+
+	<script src="./js/main.js"></script>
+</body>
+
+</html>

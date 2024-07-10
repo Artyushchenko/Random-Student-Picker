@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+	--font-family: 'Montserrat', sans-serif;
+	--primary-color: blue;
+	--hover-shadow: 0 0 0 4px lightblue;
+	--success-bg: #d4edda;
+	--success-color: #155724;
+	--error-bg: #f8d7da;
+	--error-color: #721c24;
+	--modal-bg: #fff;
+	--modal-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	--modal-animation: animatetop 0.4s;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: var(--font-family);
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	width: 1400px;
+	border: 3px solid orange;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+.wrapper h1 {
+	font-size: 40px;
+	margin: 0;
+}
+
+.wrapper button {
+	cursor: pointer;
+	border: none;
+	border-radius: 10px;
+	font-size: 15px;
+	transition: 0.2s ease-in-out;
+	padding: 10px 20px;
+	font-weight: 600;
+}
+
+.wrapper #add-student {
+	color: white;
+	background-color: var(--primary-color);
+}
+
+.wrapper #add-student:hover,
+.wrapper #pick-student:hover {
+	box-shadow: var(--hover-shadow);
+}
+
+.wrapper #pick-student {
+	text-transform: uppercase;
+	color: black;
+	background-color: rgb(66, 240, 223);
+}
+
+.wrapper ul {
+	display: none;
+}
+
+.wrapper ul.show-list {
+	display: block;
+	margin: 15px 0;
+}
+
+.wrapper ul > li {
+	list-style-type: none;
+	font-size: 16px;
+	padding: 10px 40px;
+	border-top: 2px solid gray;
+	border-left: 2px solid gray;
+	border-right: 2px solid gray;
+	margin: 0;
+}
+
+.wrapper ul > li:last-child {
+	border-bottom: 2px solid gray;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal .modal-content {
+	background-color: var(--modal-bg);
+	margin: 10% auto;
+	padding: 0;
+	border: 1px solid #888;
+	width: 30%;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: var(--modal-shadow);
+	animation: var(--modal-animation);
+}
+
+@keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+.modal .modal-content .modal-header {
+	padding: 15px;
+	background-color: #f1f1f1;
+	color: black;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #888;
+}
+
+.modal .modal-content .modal-header h2 {
+	margin: 0;
+	font-size: 18px;
+}
+
+.modal .modal-content .modal-header .close {
+	color: black;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.modal .modal-content .modal-header .close:hover,
+.modal .modal-content .modal-header .close:focus {
+	color: red;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.modal .modal-content .modal-body {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.modal .modal-content .modal-body input {
+	padding: 6px 5px;
+	border: 1px solid #ccc;
+}
+
+.modal .modal-content .modal-body input:focus {
+	outline: none;
+	box-shadow: var(--hover-shadow);
+}
+
+.modal .modal-content .modal-footer {
+	padding: 15px;
+	background-color: #f1f1f1;
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+	border-top: 1px solid #888;
+}
+
+.modal .modal-content .success {
+	padding: 20px 10px;
+	margin-bottom: 10px;
+}
+
+.modal .modal-content .success.success-message {
+	background-color: var(--success-bg);
+	color: var(--success-color);
+}
+
+.modal .modal-content .success.error-message {
+	background-color: var(--error-bg);
+	color: var(--error-color);
+}
+
+.modal .modal-content .modal-footer button#add,
+.modal .modal-content .modal-footer button#cancel {
+	border-radius: 5px;
+	padding: 10px 20px;
+	cursor: pointer;
+	color: white;
+}
+
+.modal .modal-content .modal-footer button#add {
+	background-color: #007bff;
+}
+
+.modal .modal-content .modal-footer button#add:hover {
+	background-color: #0056b3;
+}
+
+.modal .modal-content .modal-footer button#cancel {
+	background-color: #6c757d;
+}
+
+.modal .modal-content .modal-footer button#cancel:hover {
+	background-color: #5a6268;
+}
+
+.blue-background {
+	background-color: blue !important;
+	color: white !important;
+}
+
+.purple-background {
+	background-color: purple !important;
+	color: white !important;
+}
